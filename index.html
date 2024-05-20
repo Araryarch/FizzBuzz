@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FizzBuzz</title>
+  </head>
+  <body>
+    <form action="#" onsubmit="event.preventDefault()">
+      <h1>Get a FizzBuzz Result</h1>
+      <input type="number" id="number-input" placeholder="masukkan angka" />
+      <button type="submit" onclick="getFizzBuzz()">klik aku bang</button>
+    </form>
+    <h1 class="text"></h1>
+    <script>
+      const getFizzBuzz = () => {
+        const input = document.getElementById("number-input");
+        const text = document.querySelector(".text");
+        const number = input.value;
+        number % 3 === 0 && number % 5 === 0
+          ? (text.innerHTML = "FizzBuzz")
+          : number % 3 === 0
+          ? (text.innerHTML = "Fizz")
+          : number % 5 === 0
+          ? (text.innerHTML = "Buzz")
+          : (text.innerHTML = number);
+      };
+    </script>
+  </body>
+</html>
